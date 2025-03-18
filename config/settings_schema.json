@@ -37,6 +37,36 @@
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
+        "type": "color",
+        "id": "orange",
+        "label": "USAG Orange",
+        "default": "#FF9226"
+      },
+      {
+        "type": "color",
+        "id": "yellow",
+        "label": "USAG Yellow",
+        "default": "#FFCA39"
+      },
+      {
+        "type": "color",
+        "id": "light_peachy",
+        "label": "USAG Light Peachy",
+        "default": "#FFC9BA"
+      },
+      {
+        "type": "color",
+        "id": "peachy",
+        "label": "USAG Peachy",
+        "default": "#FFB396"
+      },
+      {
+        "type": "color",
+        "id": "pink",
+        "label": "USAG Pink",
+        "default": "#FF81C5"
+      },
+      {
         "type": "color_scheme_group",
         "id": "color_schemes",
         "definition": [
@@ -152,10 +182,10 @@
       {
         "type": "range",
         "id": "page_width",
-        "min": 1000,
+        "min": 1500,
         "max": 1600,
-        "step": 100,
-        "default": 1200,
+        "step": 1,
+        "default": 1500,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.page_width.label"
       },

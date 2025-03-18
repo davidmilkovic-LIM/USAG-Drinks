@@ -222,6 +222,30 @@
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
       }
 
+      :root {
+        --color-orange: {{ settings.orange }};
+        --color-yellow: {{ settings.yellow }};
+        --color-light-peachy: {{ settings.light_peachy }};
+        --color-peachy: {{ settings.peachy }};
+        --color-pink: {{ settings.pink }};
+      }
+
+      @font-face {
+        font-family: 'Mono';
+        src: url('https://cdn.shopify.com/s/files/1/0658/7396/9209/files/Mono45Headline-Regular.woff2?v=1742299628');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Mono';
+        src: url('https://cdn.shopify.com/s/files/1/0658/7396/9209/files/Mono45Headline-Bold.woff2?v=1742299507');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
       *,
       *::before,
       *::after {
@@ -240,10 +264,10 @@
         grid-template-columns: 100%;
         min-height: 100%;
         margin: 0;
-        font-size: 1.5rem;
-        letter-spacing: 0.06rem;
-        line-height: calc(1 + 0.8 / var(--font-body-scale));
-        font-family: var(--font-body-family);
+        font-size: 1.5rem !important;
+        font-family: 'Mono' !important;
+        line-height: 100% !important;
+        letter-spacing: 0 !important;
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
       }
