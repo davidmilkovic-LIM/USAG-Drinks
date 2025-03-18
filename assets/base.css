@@ -3627,7 +3627,20 @@ details-disclosure > details {
   height: 20px;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) and (max-width: 1200px) {
+  .list-menu--inline,
+  .header__icons {
+    gap: 10px;
+  }
+
+  .link-button {
+    font-size: 20px;
+    padding: 7px 28px 3px;
+    border: 2px solid #000000;
+  }
+}
+
+@media all and (min-width: 1200px) {
   .list-menu--inline,
   .header__icons {
     gap: 20px;
@@ -3641,3 +3654,23 @@ details-disclosure > details {
 }
 
 /* Header END */
+
+/* Announcement */
+.announcement-bar-section .utility-bar {
+  background: var(--color-yellow);
+}
+
+.announcement-bar__message {
+  font-size: 18px;
+  font-family: 'Mono';
+  padding: 10px 0 6px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+@media all and (min-width: 1100px) {
+  .announcement-bar__message {
+    font-size: 30px;
+  }
+}
+/* Announcement END */
