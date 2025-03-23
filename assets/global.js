@@ -1331,74 +1331,75 @@ class CartPerformance {
   }
 }
 
-const scrollContainer = document.querySelector('#MainContent');
-
-window.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  scrollContainer.scrollLeft += e.deltaY;
-}, { passive: false });
+const scrollContainer = document.querySelector('.template--index #MainContent');
+if (scrollContainer) {
+  window.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scrollContainer.scrollLeft += e.deltaY;
+  }, { passive: false });
 
 // Wheel scroll (desktop)
-window.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  scrollContainer.scrollLeft += e.deltaY;
-}, { passive: false });
+  window.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scrollContainer.scrollLeft += e.deltaY;
+  }, { passive: false });
 
 // Mouse drag (desktop)
-let isMouseDown = false;
-let mouseStartX;
-let mouseScrollLeft;
+  let isMouseDown = false;
+  let mouseStartX;
+  let mouseScrollLeft;
 
-scrollContainer.addEventListener('mousedown', (e) => {
-  isMouseDown = true;
-  mouseStartX = e.pageX;
-  mouseScrollLeft = scrollContainer.scrollLeft;
-  scrollContainer.classList.add('active');
-});
+  scrollContainer.addEventListener('mousedown', (e) => {
+    isMouseDown = true;
+    mouseStartX = e.pageX;
+    mouseScrollLeft = scrollContainer.scrollLeft;
+    scrollContainer.classList.add('active');
+  });
 
-scrollContainer.addEventListener('mouseup', () => {
-  isMouseDown = false;
-  scrollContainer.classList.remove('active');
-});
+  scrollContainer.addEventListener('mouseup', () => {
+    isMouseDown = false;
+    scrollContainer.classList.remove('active');
+  });
 
-scrollContainer.addEventListener('mouseleave', () => {
-  isMouseDown = false;
-  scrollContainer.classList.remove('active');
-});
+  scrollContainer.addEventListener('mouseleave', () => {
+    isMouseDown = false;
+    scrollContainer.classList.remove('active');
+  });
 
-scrollContainer.addEventListener('mousemove', (e) => {
-  if (!isMouseDown) return;
-  e.preventDefault();
-  const x = e.pageX;
-  const walk = x - mouseStartX;
-  scrollContainer.scrollLeft = mouseScrollLeft - walk;
-});
+  scrollContainer.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = x - mouseStartX;
+    scrollContainer.scrollLeft = mouseScrollLeft - walk;
+  });
 
 // Touch scroll (mobile) - smart direction detection
-let touchStartX = 0;
-let touchStartY = 0;
-let touchScrollLeft = 0;
-let directionLocked = false;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchScrollLeft = 0;
+  let directionLocked = false;
 
-scrollContainer.addEventListener('touchstart', (e) => {
-  touchStartX = e.touches[0].clientX;
-  touchStartY = e.touches[0].clientY;
-  touchScrollLeft = scrollContainer.scrollLeft;
-  directionLocked = false;
-});
+  scrollContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchScrollLeft = scrollContainer.scrollLeft;
+    directionLocked = false;
+  });
 
-scrollContainer.addEventListener('touchmove', (e) => {
-  const dx = e.touches[0].clientX - touchStartX;
-  const dy = e.touches[0].clientY - touchStartY;
+  scrollContainer.addEventListener('touchmove', (e) => {
+    const dx = e.touches[0].clientX - touchStartX;
+    const dy = e.touches[0].clientY - touchStartY;
 
-  if (!directionLocked) {
-    directionLocked = Math.abs(dy) > Math.abs(dx); // true if mostly vertical
-  }
+    if (!directionLocked) {
+      directionLocked = Math.abs(dy) > Math.abs(dx); // true if mostly vertical
+    }
 
-  if (directionLocked) {
-    // Prevent vertical scroll and scroll horizontally instead
-    e.preventDefault();
-    scrollContainer.scrollLeft = touchScrollLeft - dy;
-  }
-  // else: let native horizontal scroll happen
-}, { passive: false });
+    if (directionLocked) {
+      // Prevent vertical scroll and scroll horizontally instead
+      e.preventDefault();
+      scrollContainer.scrollLeft = touchScrollLeft - dy;
+    }
+    // else: let native horizontal scroll happen
+  }, { passive: false });
+}

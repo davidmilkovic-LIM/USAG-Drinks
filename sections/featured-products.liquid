@@ -1,11 +1,24 @@
 <style>
+    #shopify-section-{{ section.id }} {
+        background: url("{{ section.settings.background | image_url: master }}") left / cover no-repeat;
+    }
 
+    @media all and (min-width: 768px) {
+        #shopify-section-{{ section.id }} {
+            background: url("{{ section.settings.background_desktop | image_url: master }}") left / cover no-repeat;
+        }
+    }
 </style>
 
-<div class="page-width">
+<div class="featured-products page-width">
     {%- for block in section.blocks -%}
         {% assign product = block.settings.product %}
-        {% render 'product-item', product: product %}
+        <style>
+            .product-item.{{ block.id }}:hover .product-item__background {
+                background: {{ product.metafields.details.hover_background }};
+            }
+        </style>
+        {% render 'product-item', product: product, classes: block.id %}
     {% endfor %}
 </div>
 
@@ -14,7 +27,16 @@
     "name": "Featured Products",
     "tag": "section",
     "settings": [
-
+        {
+            "type": "image_picker",
+            "id": "background",
+            "label": "Background (Mobile)"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_desktop",
+            "label": "Background (Desktop)"
+        }
     ],
     "blocks": [
         {

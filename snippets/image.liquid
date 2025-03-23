@@ -1,0 +1,28 @@
+{% liquid
+    if width != blank
+        assign assigned_width = width
+    else
+        assign assigned_width = passed_image.width
+    endif
+    if height != blank
+        assign assigned_height = height
+    else
+        assign assigned_height = passed_image.height
+    endif
+%}
+
+{% if passed_image != blank %}
+    {{
+    passed_image
+    | image_url: width: assigned_width
+    | image_tag:
+    width: assigned_width,
+    height: assigned_height,
+    class: extra_classes,
+    sizes: sizes,
+    widths: widths,
+    fetchpriority: fetch_priority,
+    loading: loading,
+    alt: alt
+    }}
+{% endif %}

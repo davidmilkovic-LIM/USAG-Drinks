@@ -1,1 +1,54 @@
-{{ product.title }}
+<a href="{{ product.url }}" class="product-item {{ classes }}">
+    <div class="product-item__image">
+        {% render 'image', loading: 'eager', passed_image: product.featured_image, alt: product.title %}
+    </div>
+    <div class="product-item__content">
+        <div class="product-item__title">
+            {{ product.title }}
+        </div>
+        <div class="product-item__meta">
+            {% if product.metafields.details.size != blank %}
+                <span>{{ product.metafields.details.size }}</span>
+            {% endif %}
+            {% if product.metafields.details.alcohol != blank %}
+                <span>{{ product.metafields.details.alcohol }}</span>
+            {% endif %}
+            {% if product.metafields.details.gluten != blank %}
+                <span>{{ product.metafields.details.gluten }}</span>
+            {% endif %}
+        </div>
+        <div class="product-item__link"
+             {% if product.metafields.details.button_color != blank %}
+                style="background: {{ product.metafields.details.button_color }}"
+             {% endif %}>
+            Shop Now
+        </div>
+    </div>
+    <div class="product-item__background"></div>
+
+    <div>
+        {% if product.metafields.details.price_image != blank %}
+            <div class="product-item__price">
+                <img src="{{ product.metafields.details.price_image | img_url }}" alt="{{ product.title }} Price Image">
+            </div>
+        {% endif %}
+
+        {% if product.metafields.details.fruit_icon != blank %}
+            <div class="product-item__fruit-icon">
+                <img src="{{ product.metafields.details.fruit_icon | img_url }}" alt="{{ product.title }} Fruit Image">
+            </div>
+        {% endif %}
+
+        {% if product.metafields.details.background_icon_top != blank %}
+            <div class="product-item__background-icon-top">
+                <img src="{{ product.metafields.details.background_icon_top | img_url }}" alt="{{ product.title }} Background Image">
+            </div>
+        {% endif %}
+
+        {% if product.metafields.details.background_icon_bottom != blank %}
+            <div class="product-item__background-icon-bottom">
+                <img src="{{ product.metafields.details.background_icon_bottom | img_url }}" alt="{{ product.title }} Background Image">
+            </div>
+        {% endif %}
+    </div>
+</a>
