@@ -1,0 +1,38 @@
+<style>
+
+</style>
+
+<div class="page-width">
+    {%- for block in section.blocks -%}
+        {% assign product = block.settings.product %}
+        {% render 'product-item', product: product %}
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+    "name": "Featured Products",
+    "tag": "section",
+    "settings": [
+
+    ],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Featured Products"
+        }
+    ]
+}
+{% endschema %}
