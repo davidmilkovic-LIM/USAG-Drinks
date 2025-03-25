@@ -1,0 +1,163 @@
+<style>
+    #shopify-section-{{ section.id }} {
+        background: url("{{ section.settings.background | image_url: master }}") left / cover no-repeat;
+        z-index: 3;
+    }
+
+    @media all and (min-width: 768px) {
+        #shopify-section-{{ section.id }} {
+            background: url("{{ section.settings.background_desktop | image_url: master }}") left / cover no-repeat;
+        }
+    }
+</style>
+
+<div class="followus page-width">
+    <div class="followus-content">
+        {% if section.settings.title != blank %}
+            <div class="followus-title">
+                {{ section.settings.title }}
+            </div>
+        {% endif %}
+        {% if section.settings.button_text != blank %}
+            <a class="followus-button button button--primary" href="{{ section.settings.button_link }}">
+                {{ section.settings.button_text }}
+            </a>
+        {% endif %}
+        <div class="followus-socials">
+            <span>Follow Us</span>
+            <div class="followus-socials__icons">
+                {% if section.settings.social_insta != blank %}
+                    <a href="{{ section.settings.social_insta }}">
+                        {% render 'icon', icon: 'insta' %}
+                    </a>
+                {% endif %}
+                {% if section.settings.social_facebook != blank %}
+                    <a href="{{ section.settings.social_facebook }}">
+                        {% render 'icon', icon: 'facebook' %}
+                    </a>
+                {% endif %}
+                {% if section.settings.social_linkedin != blank %}
+                    <a href="{{ section.settings.social_linkedin }}">
+                        {% render 'icon', icon: 'linkedin' %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="follow-slider">
+            {% for block in section.blocks %}
+                <div class="follow-slider__item">
+                    {% render 'image', loading: 'eager', passed_image: block.settings.image, alt: 'Instagram Image' block.id, width: '500x', height: '500x' %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="followus-labels">
+        <div class="followus-labels__products">
+            {% render 'image', loading: 'eager', passed_image: section.settings.label_1, alt: 'Follow Us product label 1' %}
+            {% render 'image', loading: 'eager', passed_image: section.settings.label_2, alt: 'Follow Us product label 2' %}
+            {% render 'image', loading: 'eager', passed_image: section.settings.label_3, alt: 'Follow Us product label 3' %}
+        </div>
+        <div class="followus-labels__alcohol">
+            {% render 'image', loading: 'eager', passed_image: section.settings.alcohol, alt: 'Follow Us Alcohol image' %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Follow Us",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Backgrounds"
+        },
+        {
+            "type": "image_picker",
+            "id": "background",
+            "label": "Background (Mobile)"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_desktop",
+            "label": "Background (Desktop)"
+        },
+        {
+            "type": "header",
+            "content": "Section Content"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+        },
+        {
+            "type": "image_picker",
+            "id": "label_1",
+            "label": "Product Label 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "label_2",
+            "label": "Product Label 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "label_3",
+            "label": "Product Label 3"
+        },
+        {
+            "type": "image_picker",
+            "id": "alcohol",
+            "label": "Alcohol Label"
+        },
+        {
+            "type": "header",
+            "content": "Social Links"
+        },
+        {
+            "type": "url",
+            "id": "social_insta",
+            "label": "Social Instagram"
+        },
+        {
+            "type": "url",
+            "id": "social_facebook",
+            "label": "Social Facebook"
+        },
+        {
+            "type": "url",
+            "id": "social_linkedin",
+            "label": "Social Linkedin"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "Instagram",
+            "name": "Instagram Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Insta Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Follow Us"
+        }
+    ]
+}
+{% endschema %}

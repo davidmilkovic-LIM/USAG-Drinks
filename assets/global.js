@@ -1403,3 +1403,45 @@ if (scrollContainer) {
     // else: let native horizontal scroll happen
   }, { passive: false });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // External Links Opener
+  const links = document.links;
+  for (let i = 0; i < links.length; i++) {
+    if (links[i].hostname !== window.location.hostname) {
+      links[i].target = "_blank";
+      links[i].rel = "noreferrer noopener";
+    }
+  }
+})
+
+const slider = document.querySelector('.follow-slider');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1.5; // scroll speed
+  slider.scrollLeft = scrollLeft - walk;
+});

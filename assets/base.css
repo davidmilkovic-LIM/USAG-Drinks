@@ -4015,3 +4015,215 @@ details-disclosure > details {
   }
 }
 /* Featured Products END */
+
+/* Follow Us */
+.followus {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.followus-title {
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--color-peachy);
+  font-weight: bold;
+  -webkit-text-stroke: 2px #222D22;
+  max-width: 836px;
+  width: 200px;
+}
+
+.followus-button {
+  height: 60px;
+  font-size: 30px;
+  border: 3px solid;
+  padding: 11px 30px 7px;
+  background: #FFE473;
+  margin-top: 50px;
+  color: black;
+}
+
+.followus-button:hover {
+  background: black;
+  color: white;
+}
+
+.followus-content {
+  position: relative;
+}
+
+.followus-labels {
+  display: flex;
+  gap: 16px;
+  justify-content: end;
+}
+
+.followus-labels__products {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.followus-labels__products img {
+  max-width: 121px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.followus-labels__alcohol img {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.followus-socials {
+  margin-top: 50px;
+}
+
+.followus-socials span {
+  font-size: 32px;
+  line-height: 1;
+  color: white;
+  font-weight: 900;
+  -webkit-text-stroke: 2px #C45328;
+}
+
+.followus-socials__icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.followus-socials__icons a {
+  text-decoration: none;
+}
+
+.followus-socials__icons {
+  margin-left: -15px;
+}
+
+.followus-socials__icons a,
+.followus-socials__icons svg {
+  transform: scale(0.8);
+  margin-left: -30px;
+}
+
+.followus-socials__icons a:first-of-type,
+.followus-socials__icons svg:first-of-type {
+  margin-left: 0;
+}
+
+.follow-slider {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+}
+
+.follow-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.follow-slider__item {
+  width: 200px;
+  height: 200px;
+  border: 3px solid var(--color-orange);
+  border-radius: 20px;
+  overflow: hidden;
+
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.follow-slider__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media all and (min-width: 768px) and (max-width: 1600px){
+  .follow-slider__item {
+    width: 270px;
+    height: 270px;
+    border: 5px solid var(--color-orange);
+    border-radius: 20px;
+  }
+
+  .follow-slider {
+    left: 58%;
+  }
+}
+
+@media all and (min-width: 1100px) {
+  .followus {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 45px;
+    height: 100%;
+  }
+
+  .followus-button {
+    height: 84px;
+    border: 6px solid black;
+    font-size: 48px;
+    padding: 11px 60px 7px;
+  }
+
+  .followus-labels__alcohol img {
+    max-width: 257px;
+  }
+
+  .followus-socials__icons {
+    margin-left: 0;
+  }
+
+  .followus-socials__icons a,
+  .followus-socials__icons svg {
+    transform: scale(1);
+    margin-left: 0;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .followus-title {
+    font-size: 48px;
+    line-height: 119%;
+    -webkit-text-stroke: 3px #222D22;
+    width: unset;
+  }
+}
+
+@media all and (max-height: 830px) and (max-width: 768px) {
+  .followus-title {
+    width: 360px;
+  }
+}
+
+@media all and (min-width: 1600px) {
+  .follow-slider__item {
+    width: 377px;
+    height: 392px;
+    border: 8px solid var(--color-orange);
+    border-radius: 35px;
+  }
+
+  .follow-slider {
+    gap: 57px;
+  }
+
+  .followus-labels {
+    width: 30%;
+  }
+
+  .follow-slider {
+    left: 48%;
+  }
+}
+/* Follow Us END */

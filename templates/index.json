@@ -81,10 +81,60 @@
         "background": "shopify://shop_images/Frame_57.png",
         "background_desktop": "shopify://shop_images/Group_56.png"
       }
+    },
+    "followus_xeCMkQ": {
+      "type": "followus",
+      "blocks": {
+        "instagram_46PGCq": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify://shop_images/28fdf5fcc488e246292c8c46eb346e8c.jpg"
+          }
+        },
+        "instagram_GK7zW8": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify://shop_images/11b3bd95937dff5f9bd8a77d238bd4fa.jpg"
+          }
+        },
+        "instagram_MKkVkb": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify://shop_images/2dce1f8dde83e49cc5b3f22bd13b6a6f.jpg"
+          }
+        },
+        "instagram_69Na97": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify://shop_images/11b3bd95937dff5f9bd8a77d238bd4fa.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "instagram_46PGCq",
+        "instagram_GK7zW8",
+        "instagram_MKkVkb",
+        "instagram_69Na97"
+      ],
+      "settings": {
+        "background": "shopify://shop_images/Frame_62.png",
+        "background_desktop": "shopify://shop_images/Frame_61.png",
+        "title": "Delicious fruity flavors combine with Japanese shochu, vodka & soda to create a refreshingly crispy & delightfully Groggy beverage.",
+        "button_text": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "label_1": "shopify://shop_images/image_16.png",
+        "label_2": "shopify://shop_images/image_15.png",
+        "label_3": "shopify://shop_images/image_14.png",
+        "alcohol": "shopify://shop_images/Frame_24.png",
+        "social_insta": "https://instagram.com",
+        "social_facebook": "https://facebook.com",
+        "social_linkedin": "https://linkedin.com"
+      }
     }
   },
   "order": [
     "image_banner_qRtK9Y",
-    "featured_products_QFDrEf"
+    "featured_products_QFDrEf",
+    "followus_xeCMkQ"
   ]
 }
