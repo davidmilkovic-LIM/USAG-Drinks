@@ -3597,7 +3597,8 @@ details-disclosure > details {
 }
 
 .button.button--pink:hover {
-  background: var(--color-peachy);
+  background: black;
+  color: white;
 }
 
 .button:after,
@@ -4249,6 +4250,11 @@ details-disclosure > details {
   background: #FFE473;
   color: black;
   font-weight: 700;
+}
+
+.testimonials .button:hover {
+  background: black;
+  color: white;
 }
 
 .testimonials-top__title {
