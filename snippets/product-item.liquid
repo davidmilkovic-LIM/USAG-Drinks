@@ -35,7 +35,7 @@
 
         {% if product.metafields.details.fruit_icon != blank %}
             <div class="product-item__fruit-icon">
-                <img src="{{ product.metafields.details.fruit_icon | img_url }}" alt="{{ product.title }} Fruit Image">
+                <img src="{{ product.metafields.details.fruit_icon | img_url: "master" }}" alt="{{ product.title }} Fruit Image">
             </div>
         {% endif %}
 

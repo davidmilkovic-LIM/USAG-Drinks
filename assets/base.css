@@ -3812,6 +3812,8 @@ details-disclosure > details {
   display: none!important;
 }
 
+
+/* Featured Products */
 .featured-products {
   display: flex;
   justify-content: space-between;
@@ -3936,8 +3938,14 @@ details-disclosure > details {
   position: absolute;
   top: 70px;
   left: -28px;
+  width: 82px;
   z-index: 2;
 }
+
+.product-item:hover .product-item__fruit-icon img {
+  width: 100%;
+}
+
 .product-item:hover .product-item__background-icon-top {
   display: block;
   position: absolute;
@@ -4006,3 +4014,4 @@ details-disclosure > details {
     padding-right: 30px;
   }
 }
+/* Featured Products END */
