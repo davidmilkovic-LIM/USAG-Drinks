@@ -1,0 +1,106 @@
+<style>
+    #shopify-section-{{ section.id }} {
+        background: url("{{ section.settings.background | image_url: master }}") left / cover no-repeat;
+        z-index: 4;
+    }
+
+    @media all and (min-width: 768px) {
+        #shopify-section-{{ section.id }} {
+            background: url("{{ section.settings.background_desktop | image_url: master }}") left / cover no-repeat;
+        }
+    }
+</style>
+
+<div class="testimonials page-width">
+    <div class="testimonials-top">
+        <div class="testimonials-top__title">
+            {{ section.settings.title }}
+        </div>
+        {% if section.settings.button_link != blank %}
+            <a class="testimonials-top__button button" href="{{ section.settings.button_link }}">
+                {{ section.settings.button_text }}
+            </a>
+        {% endif %}
+    </div>
+    <div class="testimonials-items">
+        {% for block in section.blocks %}
+            <div class="testimonials-items__block">
+                <div class="testimonials-items__block-stars">
+                    {% render 'icon', icon: 'stars' %}
+                </div>
+                <div class="testimonials-items__block-text">
+                    {{ block.settings.text }}
+                </div>
+                <div class="testimonials-items__block-name">
+                    {{ block.settings.name }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Testimonials",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Backgrounds"
+        },
+        {
+            "type": "image_picker",
+            "id": "background",
+            "label": "Background (Mobile)"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_desktop",
+            "label": "Background (Desktop)"
+        },
+        {
+            "type": "header",
+            "content": "Section Content"
+        },
+        {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "Testimonial",
+            "name": "Testimonial",
+            "limit": 3,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Testimonial Text"
+                },
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Testimonial Name"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Testimonials"
+        }
+    ]
+}
+{% endschema %}

@@ -130,11 +130,50 @@
         "social_facebook": "https://facebook.com",
         "social_linkedin": "https://linkedin.com"
       }
+    },
+    "testimonials_X3HBGn": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_Aancan": {
+          "type": "Testimonial",
+          "settings": {
+            "text": "This is amazing drink, i really like it",
+            "name": "John Boulding"
+          }
+        },
+        "testimonial_pC8jhX": {
+          "type": "Testimonial",
+          "settings": {
+            "text": "This is amazing drink, i really like it",
+            "name": "John Boulding"
+          }
+        },
+        "testimonial_Kfmg8r": {
+          "type": "Testimonial",
+          "settings": {
+            "text": "This is amazing drink, i really like it",
+            "name": "John Boulding"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Aancan",
+        "testimonial_pC8jhX",
+        "testimonial_Kfmg8r"
+      ],
+      "settings": {
+        "background": "shopify://shop_images/Frame_61_1.png",
+        "background_desktop": "shopify://shop_images/Frame_60.png",
+        "title": "<p>What People are saying<br/>for our drinks :)</p>",
+        "button_text": "Shop Now",
+        "button_link": "shopify://collections/all"
+      }
     }
   },
   "order": [
     "image_banner_qRtK9Y",
     "featured_products_QFDrEf",
-    "followus_xeCMkQ"
+    "followus_xeCMkQ",
+    "testimonials_X3HBGn"
   ]
 }
