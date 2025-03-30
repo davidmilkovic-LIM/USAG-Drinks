@@ -247,7 +247,10 @@
         {%- endif -%}
       </div>
 
-      <a href="{{ routes.all_products_collection_url }}" class="header__menu-item list-menu__item link link-button link--text focus-inset small-hide medium-hide">
+      <a href="{{ routes.all_products_collection_url }}" class="header__menu-item list-menu__item link link-button link--text focus-inset small-hide medium-hide"
+      {% if link.current %}
+        aria-current="page"
+      {% endif %}>
         <span>Shop</span>
       </a>
       {% comment %}{% render 'header-search', input_id: 'Search-In-Modal' %}{% endcomment %}
