@@ -1,0 +1,105 @@
+<style>
+    #shopify-section-{{ section.id }} {
+        background: url("{{ section.settings.background | image_url: master }}") center / cover no-repeat;
+    }
+
+    @media all and (min-width: 768px) {
+        #shopify-section-{{ section.id }} {
+            background: url("{{ section.settings.background_desktop | image_url: master }}") center / cover no-repeat;
+        }
+    }
+</style>
+
+<div class="footer-updated page-width">
+    <div class="footer-updated__links">
+        <ul class="list-unstyled">
+            {%- for link in section.settings.menu.links -%}
+                <li>
+                    <a
+                            href="{{ link.url }}"
+                            class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                    >
+                        {{ link.title | escape }}
+                    </a>
+                </li>
+            {%- endfor -%}
+        </ul>
+    </div>
+    <div class="followus-socials">
+        <span>Follow Us</span>
+        <div class="followus-socials__icons">
+            {% if section.settings.social_insta != blank %}
+                <a href="{{ section.settings.social_insta }}">
+                    {% render 'icon', icon: 'insta' %}
+                </a>
+            {% endif %}
+            {% if section.settings.social_facebook != blank %}
+                <a href="{{ section.settings.social_facebook }}">
+                    {% render 'icon', icon: 'facebook' %}
+                </a>
+            {% endif %}
+            {% if section.settings.social_linkedin != blank %}
+                <a href="{{ section.settings.social_linkedin }}">
+                    {% render 'icon', icon: 'linkedin' %}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Footer",
+    "tag": "footer",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Backgrounds"
+        },
+        {
+            "type": "image_picker",
+            "id": "background",
+            "label": "Background (Mobile)"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_desktop",
+            "label": "Background (Desktop)"
+        },
+        {
+            "type": "header",
+            "content": "Section Content"
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "default": "footer",
+            "label": "t:sections.footer.blocks.link_list.settings.menu.label"
+        },
+        {
+            "type": "header",
+            "content": "Social Links"
+        },
+        {
+            "type": "url",
+            "id": "social_insta",
+            "label": "Social Instagram"
+        },
+        {
+            "type": "url",
+            "id": "social_facebook",
+            "label": "Social Facebook"
+        },
+        {
+            "type": "url",
+            "id": "social_linkedin",
+            "label": "Social Linkedin"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Footer"
+        }
+    ]
+}
+{% endschema %}
