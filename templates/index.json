@@ -168,12 +168,24 @@
         "button_text": "Shop Now",
         "button_link": "shopify://collections/all"
       }
+    },
+    "newsletter_updated_DbTVdr": {
+      "type": "newsletter-updated",
+      "settings": {
+        "background": "shopify://shop_images/Frame_57.png",
+        "background_desktop": "shopify://shop_images/Group_56.png",
+        "newsletter_title": "Stay up to date",
+        "newsletter_subtitle": "Get early access to U Suck at golf events, new flavors & more!",
+        "newsletter_icon": "shopify://shop_images/Group_60.png",
+        "contact_title": "<p>Want to <br/>stock USAG?</p>"
+      }
     }
   },
   "order": [
     "image_banner_qRtK9Y",
     "featured_products_QFDrEf",
     "followus_xeCMkQ",
-    "testimonials_X3HBGn"
+    "testimonials_X3HBGn",
+    "newsletter_updated_DbTVdr"
   ]
 }

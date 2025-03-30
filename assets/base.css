@@ -4346,7 +4346,7 @@ details-disclosure > details {
     }
 }
 
-@media all and (min-width: 1300px) {
+@media all and (min-width: 1024px) {
     .testimonials-top {
         flex-direction: row;
     }
@@ -4547,7 +4547,7 @@ details-disclosure > details {
     display: none;
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1150px) {
     .newsletter-updated {
         flex-direction: row;
         gap: 46px;
