@@ -1337,7 +1337,7 @@ let wheelHandler = null;
 let mouseHandlers = {};
 
 function isWideScreen() {
-  return window.innerWidth > 1099;
+  return window.innerWidth > 1024;
 }
 
 function enableHorizontalScroll() {
