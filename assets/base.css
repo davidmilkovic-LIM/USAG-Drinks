@@ -4466,6 +4466,12 @@ details-disclosure > details {
 .updated__form .field__input:focus {
     box-shadow: none;
     margin: 0;
+    height: 65px;
+}
+
+.updated__form .textarea-field:after,
+.updated__form textarea {
+    border-radius: 100px 20px 20px 100px!important;
 }
 
 .updated__form .field__label {
