@@ -1462,3 +1462,46 @@ if (slider) {
     slider.scrollLeft = scrollLeft - walk;
   });
 }
+
+document.querySelectorAll('.product-item__quantity-selector').forEach((block) => {
+  const input = block.querySelector('.quantity-input');
+  const plusBtn = block.querySelector('.plus');
+  const minusBtn = block.querySelector('.minus');
+
+  plusBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    input.value = parseInt(input.value) + 1;
+    input.dispatchEvent(new Event('change'));
+  });
+
+  minusBtn.addEventListener('click', (event) => {
+    if (parseInt(input.value) > parseInt(input.min)) {
+      event.preventDefault();
+      input.value = parseInt(input.value) - 1;
+      input.dispatchEvent(new Event('change'));
+    }
+  });
+});
+
+document.querySelectorAll('.AddToCart').forEach(item => {
+  item.addEventListener('click', function (e) {
+    e.preventDefault();
+    let id = +item.getAttribute('data-id');
+    const productContainer = item.closest('.collection-product-item'); // your product wrapper
+    const quantityInput = productContainer.querySelector('.quantity-input');
+    const quantity = parseInt(quantityInput.value);
+    fetch('/cart/add.js', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify({
+        id,
+        quantity
+      })
+    }).then(response => response.json())
+        .then(result => {
+          location.href = '/cart';
+        })
+  })
+})

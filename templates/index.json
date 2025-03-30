@@ -23,7 +23,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop Now",
-            "button_link_1": "shopify://collections",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -78,6 +78,7 @@
         "product_kAje3n"
       ],
       "settings": {
+        "collection": false,
         "background": "shopify://shop_images/Frame_57.png",
         "background_desktop": "shopify://shop_images/Group_56.png"
       }
