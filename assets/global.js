@@ -1487,7 +1487,7 @@ document.querySelectorAll('.AddToCart').forEach(item => {
   item.addEventListener('click', function (e) {
     e.preventDefault();
     let id = +item.getAttribute('data-id');
-    const productContainer = item.closest('.collection-product-item'); // your product wrapper
+    const productContainer = item.closest('.AddToCart--wrapper');
     const quantityInput = productContainer.querySelector('.quantity-input');
     const quantity = parseInt(quantityInput.value);
     fetch('/cart/add.js', {
