@@ -180,6 +180,24 @@
         "newsletter_icon": "shopify://shop_images/Group_60.png",
         "contact_title": "<p>Want to <br/>stock USAG?</p>"
       }
+    },
+    "174397645320d0dca2": {
+      "type": "apps",
+      "blocks": {
+        "mappy_store_locator_page_embed_block_JteB8E": {
+          "type": "shopify://apps/mappy-store-locator/blocks/page-embed-block/edfca2bd-82ad-413c-b32c-580d239b17ab",
+          "settings": {
+            "is_show_heading_map": true,
+            "is_show_description_map": false
+          }
+        }
+      },
+      "block_order": [
+        "mappy_store_locator_page_embed_block_JteB8E"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -187,6 +205,7 @@
     "featured_products_QFDrEf",
     "followus_xeCMkQ",
     "testimonials_X3HBGn",
-    "newsletter_updated_DbTVdr"
+    "newsletter_updated_DbTVdr",
+    "174397645320d0dca2"
   ]
 }

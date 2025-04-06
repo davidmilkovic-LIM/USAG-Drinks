@@ -12,18 +12,6 @@
     "featured_products_fk4rGc": {
       "type": "featured-products",
       "blocks": {
-        "product_WztjfE": {
-          "type": "product",
-          "settings": {
-            "product": "vodka-transfusion"
-          }
-        },
-        "product_YW4kPi": {
-          "type": "product",
-          "settings": {
-            "product": "orange-crush"
-          }
-        },
         "product_Lm743P": {
           "type": "product",
           "settings": {
@@ -32,8 +20,6 @@
         }
       },
       "block_order": [
-        "product_WztjfE",
-        "product_YW4kPi",
         "product_Lm743P"
       ],
       "settings": {
