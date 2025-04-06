@@ -1,0 +1,83 @@
+<style>
+    #shopify-section-{{ section.id }} {
+        background: url("{{ section.settings.background | image_url: master }}") left / cover no-repeat;
+        height: 82vh;
+    }
+    
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+        #shopify-section-{{ section.id }} {
+            height: 60vh;
+        }
+    }
+
+    .template--collection #shopify-section-{{ section.id }} {
+        height: auto!important;
+    }
+
+    @media all and (min-width: 1025px) {
+        #shopify-section-{{ section.id }} {
+            background: url("{{ section.settings.background_desktop | image_url: master }}") left / cover no-repeat;
+            height: calc(100vh - 151px)!important;
+        }
+
+        .template--collection #shopify-section-{{ section.id }} {
+            height: 90vh!important;
+        }
+    }
+</style>
+
+<div class="featured-products related-products-updated page-width">
+    {%- for product in product.metafields.details.related.value -%}
+        {% if section.settings.collection %}
+            <style>
+                .product-item.{{ product.handle }}:hover .product-item__background {
+                    background: {{ product.metafields.details.hover_background }};
+                }
+
+                .product-item.{{ product.handle }} .product-item__background {
+                    background: {{ product.metafields.details.background }};
+                }
+            </style>
+            {% render 'collection-product-item', product: product, classes: product.handle %}
+        {% else %}
+            <style>
+                .product-item.{{ product.handle }}:hover .product-item__background {
+                    background: {{ product.metafields.details.hover_background }};
+                }
+            </style>
+            {% render 'product-item', product: product, classes: product.handle %}
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+    "name": "Related Products",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "collection",
+            "label": "Collection Template",
+            "default": false
+        },
+        {
+            "type": "image_picker",
+            "id": "background",
+            "label": "Background (Mobile)"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_desktop",
+            "label": "Background (Desktop)"
+        }
+    ],
+    "blocks": [
+    ],
+    "presets": [
+        {
+            "name": "Related Products"
+        }
+    ]
+}
+{% endschema %}
