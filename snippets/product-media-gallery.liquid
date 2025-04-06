@@ -45,9 +45,6 @@
 <media-gallery
   id="MediaGallery-{{ section.id }}"
   role="region"
-  {% if section.settings.enable_sticky_info %}
-    class="product__column-sticky"
-  {% endif %}
   aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
   data-desktop-layout="{{ section.settings.gallery_layout }}"
 >
@@ -94,34 +91,10 @@
           {% continue %}
         {% endif %}
 
-        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-          <li
-            id="Slide-{{ section.id }}-{{ media.id }}"
-            class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == nil and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
-            data-media-id="{{ section.id }}-{{ media.id }}"
-          >
-            {%- liquid
-              assign media_position = media_position | default: 0 | plus: 1
-              assign lazy_load = false
-              if media_position > 1
-                assign lazy_load = true
-              endif
-            -%}
-            {% render 'product-thumbnail',
-              media: media,
-              media_count: media_count,
-              position: media_position,
-              desktop_layout: section.settings.gallery_layout,
-              mobile_layout: section.settings.mobile_thumbnails,
-              loop: section.settings.enable_video_looping,
-              modal_id: section.id,
-              xr_button: true,
-              media_width: media_width,
-              media_fit: section.settings.media_fit,
-              constrain_to_viewport: section.settings.constrain_to_viewport,
-              lazy_load: lazy_load
-            %}
-          </li>
+        {%- unless forloop.index == 1 or media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          <div class="product__media-list-item">
+            {% render 'image', loading: 'eager', width: '1296x', height: '1785x', passed_image: media, alt: product.title %}
+          </div>
         {%- endunless -%}
       {%- endfor -%}
     </ul>

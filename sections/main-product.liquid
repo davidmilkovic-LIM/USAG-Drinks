@@ -72,8 +72,30 @@
     >
   {%- endif -%}
 
+    <style>
+        .product__media-wrapper {
+            background: url("{{ product.metafields.pdp.pdp_background | image_url: master }}") center / cover no-repeat;
+        }
+
+        .product__media-list-item {
+            border: 6px solid {{ product.metafields.details.button_color }};
+        }
+
+        @media all and (max-width: 768px) {
+            .product__media-list-item {
+                border: 3px solid {{ product.metafields.details.button_color }};
+            }
+        }
+
+        @media all and (min-width: 768px) and (max-width: 1500px) {
+            .product__media-list-item {
+                border: 4px solid {{ product.metafields.details.button_color }};
+            }
+        }
+    </style>
+
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  <div class="page-width">
+  <div class="page-width product-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
