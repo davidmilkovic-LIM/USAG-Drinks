@@ -37,7 +37,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/Slide_10.png",
-        "image_mobile": "shopify://shop_images/Slide_10_3.png",
+        "image_mobile": "shopify://shop_images/Frame_67.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
@@ -80,7 +80,8 @@
       "settings": {
         "collection": false,
         "background": "shopify://shop_images/Frame_57.png",
-        "background_desktop": "shopify://shop_images/Group_56.png"
+        "background_desktop": "shopify://shop_images/Group_56.png",
+        "mobile_title": "Our Products"
       }
     },
     "followus_xeCMkQ": {
