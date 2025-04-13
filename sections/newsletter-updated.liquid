@@ -111,7 +111,7 @@
     <div class="contact-updated__form updated__form">
         {% if section.settings.contact_title != blank %}
             <div class="contact-form__title text--stroke" data-text="{{ section.settings.contact_title | strip_html }}">
-                {{ section.settings.contact_title }}
+                {{ section.settings.contact_title | strip_html }}
             </div>
         {% endif %}
         {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}

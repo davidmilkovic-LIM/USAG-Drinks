@@ -1,17 +1,6 @@
 <style>
     #shopify-section-{{ section.id }} {
         background: url("{{ section.settings.background | image_url: master }}") left / cover no-repeat;
-        height: 70vh;
-    }
-    
-    @media all and (min-width: 768px) and (max-width: 1024px) {
-        #shopify-section-{{ section.id }} {
-            height: 60vh;
-        }
-    }
-
-    .template--collection #shopify-section-{{ section.id }} {
-        height: auto!important;
     }
 
     @media all and (min-width: 1025px) {
@@ -27,6 +16,12 @@
 </style>
 
 <div class="featured-products page-width">
+    {% if section.settings.mobile_title != blank %}
+        <div class="featured-products__mobile-title inline-richtext text--stroke"
+             data-text="{{ section.settings.mobile_title }}">
+            {{ section.settings.mobile_title }}
+        </div>
+    {% endif %}
     {%- for block in section.blocks -%}
         {% assign product = block.settings.product %}
             {% if section.settings.collection %}
@@ -71,6 +66,11 @@
             "type": "image_picker",
             "id": "background_desktop",
             "label": "Background (Desktop)"
+        },
+        {
+            "type": "text",
+            "id": "mobile_title",
+            "label": "Mobile Title"
         }
     ],
     "blocks": [
