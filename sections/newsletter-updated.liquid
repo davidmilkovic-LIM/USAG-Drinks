@@ -18,96 +18,132 @@
     }
 </style>
 
-<div class="newsletter-updated page-width">
-    <div class="newsletter-updated__form updated__form">
-        {% if section.settings.newsletter_title != blank %}
-            <div class="newsletter-form__title text--stroke" data-text="{{ section.settings.newsletter_title }}">
-                {{ section.settings.newsletter_title }}
-            </div>
-        {% endif %}
-        {% if section.settings.newsletter_subtitle != blank %}
-            <div class="newsletter-form__subtitle text--stroke" data-text="{{ section.settings.newsletter_subtitle }}">
-                {{ section.settings.newsletter_subtitle }}
-            </div>
-        {% endif %}
-        {% if section.settings.newsletter_icon != blank %}
-            <div class="newsletter-form__icon">
-                <img src="{{ section.settings.newsletter_icon | img_url: '500x' }}" alt="Newsletter Icon">
-            </div>
-        {% endif %}
-        {% form 'customer', class: 'newsletter-form' %}
-            <input type="hidden" name="contact[tags]" value="newsletter">
-            <div
-                    class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                    {% if settings.animations_reveal_on_scroll %}
-                        data-cascade
-                        style="--animation-order: {{ forloop.index }};"
-                    {% endif %}
-            >
-                <div class="newsletter-form__field-wrapper-block">
-                    <div class="field newsletter-form__field">
-                        <input
-                                id="NewsletterForm--{{ section.id }}"
-                                type="email"
-                                name="contact[email]"
-                                class="field__input"
-                                value="{{ form.email }}"
-                                aria-required="true"
-                                autocorrect="off"
-                                autocapitalize="off"
-                                autocomplete="email"
-                                {% if form.errors %}
-                                    autofocus
-                                    aria-invalid="true"
-                                    aria-describedby="Newsletter-error--{{ section.id }}"
-                                {% elsif form.posted_successfully? %}
-                                    aria-describedby="Newsletter-success--{{ section.id }}"
-                                {% endif %}
-                                placeholder="{{ 'newsletter.label' | t }}"
-                                required
+<div class="newsletter-updated {% if template.suffix == 'contact' %}contact-updated{% endif %} page-width">
+    {% unless template.name == 'page' and template.suffix == 'contact' %}
+        <div class="newsletter-updated__form updated__form">
+            {% if section.settings.newsletter_title != blank %}
+                <div class="newsletter-form__title text--stroke" data-text="{{ section.settings.newsletter_title }}">
+                    {{ section.settings.newsletter_title }}
+                </div>
+            {% endif %}
+            {% if section.settings.newsletter_subtitle != blank %}
+                <div class="newsletter-form__subtitle text--stroke" data-text="{{ section.settings.newsletter_subtitle }}">
+                    {{ section.settings.newsletter_subtitle }}
+                </div>
+            {% endif %}
+            {% if section.settings.newsletter_icon != blank %}
+                <div class="newsletter-form__icon">
+                    <img src="{{ section.settings.newsletter_icon | img_url: '500x' }}" alt="Newsletter Icon">
+                </div>
+            {% endif %}
+            {% form 'customer', class: 'newsletter-form' %}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div
+                        class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                        {% if settings.animations_reveal_on_scroll %}
+                            data-cascade
+                            style="--animation-order: {{ forloop.index }};"
+                        {% endif %}
+                >
+                    <div class="newsletter-form__field-wrapper-block">
+                        <div class="field newsletter-form__field">
+                            <input
+                                    id="NewsletterForm--{{ section.id }}"
+                                    type="email"
+                                    name="contact[email]"
+                                    class="field__input"
+                                    value="{{ form.email }}"
+                                    aria-required="true"
+                                    autocorrect="off"
+                                    autocapitalize="off"
+                                    autocomplete="email"
+                                    {% if form.errors %}
+                                        autofocus
+                                        aria-invalid="true"
+                                        aria-describedby="Newsletter-error--{{ section.id }}"
+                                    {% elsif form.posted_successfully? %}
+                                        aria-describedby="Newsletter-success--{{ section.id }}"
+                                    {% endif %}
+                                    placeholder="{{ 'newsletter.label' | t }}"
+                                    required
+                            >
+                            <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                                Enter email address
+                            </label>
+                        </div>
+                        <button
+                                type="submit"
+                                class="newsletter-form__button field__button"
+                                name="commit"
+                                id="Subscribe"
+                                aria-label="{{ 'newsletter.button_label' | t }}"
                         >
-                        <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                            Enter email address
-                        </label>
-                    </div>
-                    <button
-                            type="submit"
-                            class="newsletter-form__button field__button"
-                            name="commit"
-                            id="Subscribe"
-                            aria-label="{{ 'newsletter.button_label' | t }}"
-                    >
-                        SIGN UP
-                        <span class="svg-wrapper">
+                            SIGN UP
+                            <span class="svg-wrapper">
                       {{- 'icon-arrow.svg' | inline_asset_content -}}
                     </span>
-                    </button>
-                </div>
-                {%- if form.errors -%}
-                    <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                        </button>
+                    </div>
+                    {%- if form.errors -%}
+                        <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
                     <span class="svg-wrapper">
                       {{- 'icon-error.svg' | inline_asset_content -}}
                     </span>
-                        {{- form.errors.translated_fields.email | capitalize }}
-                        {{ form.errors.messages.email -}}
-                    </small>
-                {%- endif -%}
-            </div>
-            {%- if form.posted_successfully? -%}
-                <h3
-                        class="newsletter-form__message newsletter-form__message--success form__message"
-                        id="Newsletter-success--{{ section.id }}"
-                        tabindex="-1"
-                        autofocus
-                >
+                            {{- form.errors.translated_fields.email | capitalize }}
+                            {{ form.errors.messages.email -}}
+                        </small>
+                    {%- endif -%}
+                </div>
+                {%- if form.posted_successfully? -%}
+                    <h3
+                            class="newsletter-form__message newsletter-form__message--success form__message"
+                            id="Newsletter-success--{{ section.id }}"
+                            tabindex="-1"
+                            autofocus
+                    >
                   <span class="svg-wrapper">
                     {{- 'icon-success.svg' | inline_asset_content -}}
                   </span>
-                    {{- 'newsletter.success' | t }}
-                </h3>
-            {%- endif -%}
-        {% endform %}
-    </div>
+                        {{- 'newsletter.success' | t }}
+                    </h3>
+                {%- endif -%}
+            {% endform %}
+        </div>
+        {% else %}
+
+        <div class="contact-updated__form updated__form contact-updated__details">
+            {% if section.settings.contact_details != blank %}
+                <div class="contact-form__title text--stroke" data-text="{{ section.settings.contact_details | strip_html }}">
+                    {{ section.settings.contact_details | strip_html }}
+                </div>
+            {% endif %}
+            {% if section.settings.contact_office != blank %}
+                <div class="contact-form__title-small text--stroke" data-text="Our Office">
+                    Our Office
+                </div>
+                <span>{{ section.settings.contact_office }}</span>
+            {% endif %}
+            {% if section.settings.contact_phone != blank %}
+                <div class="contact-form__title-small text--stroke" data-text="Phone">
+                    Phone
+                </div>
+                <span>{{ section.settings.contact_phone }}</span>
+            {% endif %}
+            {% if section.settings.contact_email != blank %}
+                <div class="contact-form__title-small text--stroke" data-text="Email">
+                    Email
+                </div>
+                <span>{{ section.settings.contact_email }}</span>
+            {% endif %}
+            {% if section.settings.contact_hours != blank %}
+                <div class="contact-form__title-small text--stroke" data-text="Business Hours">
+                    Business Hours
+                </div>
+                <span>{{ section.settings.contact_hours }}</span>
+            {% endif %}
+        </div>
+
+    {% endunless %}
     <div class="contact-updated__form updated__form">
         {% if section.settings.contact_title != blank %}
             <div class="contact-form__title text--stroke" data-text="{{ section.settings.contact_title | strip_html }}">
@@ -209,58 +245,87 @@
 
 {% schema %}
 {
-    "name": "Newsletter",
-    "tag": "section",
-    "settings": [
-        {
-            "type": "header",
-            "content": "Backgrounds"
-        },
-        {
-            "type": "image_picker",
-            "id": "background",
-            "label": "Background (Mobile)"
-        },
-        {
-            "type": "image_picker",
-            "id": "background_desktop",
-            "label": "Background (Desktop)"
-        },
-        {
-            "type": "header",
-            "content": "Newsletter Section Content"
-        },
-        {
-            "type": "text",
-            "id": "newsletter_title",
-            "label": "Newsletter Title"
-        },
-        {
-            "type": "text",
-            "id": "newsletter_subtitle",
-            "label": "Newsletter Subtitle"
-        },
-        {
-            "type": "image_picker",
-            "id": "newsletter_icon",
-            "label": "Newsletter Icon"
-        },
-        {
-            "type": "header",
-            "content": "Contact Section Content"
-        },
-        {
-            "type": "richtext",
-            "id": "contact_title",
-            "label": "Contact Title"
-        }
-    ],
-    "blocks": [
-    ],
-    "presets": [
-        {
-            "name": "Newsletter Updated"
-        }
-    ]
+  "name": "Newsletter",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Backgrounds"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background (Mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_desktop",
+      "label": "Background (Desktop)"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter Section Content"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Title"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_subtitle",
+      "label": "Newsletter Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "newsletter_icon",
+      "label": "Newsletter Icon"
+    },
+    {
+      "type": "header",
+      "content": "Contact Section Content"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_title",
+      "label": "Contact Title"
+    },
+    {
+      "type": "header",
+      "content": "Contact Details"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_details",
+      "label": "Contact Details"
+    },
+    {
+      "type": "text",
+      "id": "contact_office",
+      "label": "Contact Details Office"
+    },
+    {
+      "type": "text",
+      "id": "contact_phone",
+      "label": "Contact Details Phone"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact Details Email"
+    },
+    {
+      "type": "text",
+      "id": "contact_hours",
+      "label": "Contact Details Hours"
+    }
+  ],
+  "blocks": [
+  ],
+  "presets": [
+    {
+      "name": "Newsletter Updated"
+    }
+  ]
 }
 {% endschema %}
