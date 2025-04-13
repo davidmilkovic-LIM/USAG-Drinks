@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "about_us_YcnM3d": {
+      "type": "about-us",
+      "settings": {
+        "image": "shopify://shop_images/Frame_67_2.png",
+        "title": "Headline Here",
+        "content": "<p><strong>U Suck at Golf was founded by two golf fanboys who went looking for gear as entertaining and irreverent as the game itself...and couldn’t find it. So they made it.<br/><br/></strong>What began as a funny logo on a polo has turned into a robust product line that rages against stereotypical, stuffy golf goods (and anyone who insists that’s the “right” way to play).  <br/><br/>But no matter how much we grow, our mission remains the same: to break 80. Oh wait, that’s our personal mission. Our brand mission is to bring as much fun to the course as Happy Gilmore brought to the tour. We just do it through entertaining, innovative products instead. And it goes without saying that everything we make is high quality. We’d never make something mediocre just to take your money—we save that kind of gambling for the course.  <br/><br/>At the end of the day we’re exactly like our customers: just normal people trying to get some (okay a ton) of golf in. Welcome to the madness: the only thing we can promise besides excellent products and aggressively-attentive customer service is that you’ll never be bored around here.</p>"
+      }
+    },
+    "featured_products_aRMi6N": {
+      "type": "featured-products",
+      "blocks": {
+        "product_6J8KbX": {
+          "type": "product",
+          "settings": {
+            "product": "vodka-transfusion"
+          }
+        },
+        "product_bet8UM": {
+          "type": "product",
+          "settings": {
+            "product": "orange-crush"
+          }
+        },
+        "product_9Ahdjw": {
+          "type": "product",
+          "settings": {
+            "product": "lemon-sliced-tea"
+          }
+        }
+      },
+      "block_order": [
+        "product_6J8KbX",
+        "product_bet8UM",
+        "product_9Ahdjw"
+      ],
+      "settings": {
+        "collection": false,
+        "background": "shopify://shop_images/Rectangle_29.png",
+        "background_desktop": "shopify://shop_images/Rectangle_29.png",
+        "mobile_title": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "about_us_YcnM3d",
+    "featured_products_aRMi6N"
+  ]
+}

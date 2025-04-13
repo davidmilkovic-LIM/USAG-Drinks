@@ -1,0 +1,47 @@
+<div class="about-us">
+    {% if section.settings.image != blank %}
+        <div class="about-us__image">
+            {% render 'image', loading: 'eager', passed_image: section.settings.image, alt: 'About Us Image' %}
+        </div>
+    {% endif %}
+    <div class="page-width">
+        <div class="about-us__title">
+            <h1 class="inline-richtext text--stroke"
+                data-text="{{ section.settings.title }}">
+                {{ section.settings.title }}
+            </h1>
+        </div>
+        <div class="about-us__content">
+            {{ section.settings.content }}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Content Section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Section"
+    }
+  ]
+}
+{% endschema %}

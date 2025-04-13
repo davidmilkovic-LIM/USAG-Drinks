@@ -3671,10 +3671,6 @@ details-disclosure > details {
         -webkit-text-stroke: 11px black;
         border-width: 6px;
     }
-
-    .text--stroke {
-        -webkit-text-stroke: 11px black;
-    }
 }
 
 /* General END */
@@ -5429,7 +5425,7 @@ cart-remove-button .button {
     }
 
     .featured-products__mobile-title:after {
-        color: #FFB396;
+        color: var(--color-peachy);
     }
 
     .followus {
@@ -5473,3 +5469,56 @@ cart-remove-button .button {
         padding: 60px 5rem;
     }
 }
+
+/* About Us */
+.about-us {
+    background: #FFF2ED;
+}
+
+.about-us__image {
+    padding-bottom: 20px;
+}
+
+.about-us__image img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-us__content p {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    line-height: 120%;
+}
+
+.about-us__title {
+    padding: 50px 0;
+}
+
+.about-us__title h1 {
+    font-size: 96px;
+    letter-spacing: 0.03rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.about-us__title h1.text--stroke:after {
+    color: var(--color-peachy);
+}
+
+.about-us__content {
+    padding-bottom: 50px;
+}
+
+@media all and (max-width: 768px) {
+    .about-us__title h1 {
+        font-size: 50px;
+    }
+
+    .about-us__content p {
+        font-size: 16px;
+    }
+}
+/* About Us END */
