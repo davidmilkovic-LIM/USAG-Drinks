@@ -147,8 +147,9 @@
         {%- case block.type -%}
           {%- when 'heading' -%}
             <h2
-              class="banner__heading inline-richtext {{ block.settings.heading_size }}"
+              class="banner__heading inline-richtext text--stroke {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}
+              data-text="{{ block.settings.heading }}"
             >
               {{ block.settings.heading }}
             </h2>
@@ -168,7 +169,7 @@
                   {% else %}
                     href="{{ block.settings.button_link_1 }}"
                   {% endif %} data-text="{{ block.settings.button_label_1 }}"
-                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %} button--pink"
+                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %} button--stroke button--pink" data-text="{{- block.settings.button_label_1 | escape -}}"
                 >
                   <span>{{- block.settings.button_label_1 | escape -}}</span>
                 </a>
@@ -180,7 +181,7 @@
                   {% else %}
                     href="{{ block.settings.button_link_2 }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
+                  class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %} button--stroke" data-text="{{- block.settings.button_label_2 | escape -}}"
                 >
                   {{- block.settings.button_label_2 | escape -}}
                 </a>

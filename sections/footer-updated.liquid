@@ -17,7 +17,7 @@
                 <li>
                     <a
                             href="{{ link.url }}"
-                            class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                            class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} text--stroke" data-text="{{ link.title | escape }}"
                     >
                         {{ link.title | escape }}
                     </a>
@@ -26,7 +26,7 @@
         </ul>
     </div>
     <div class="followus-socials">
-        <span>Follow Us</span>
+        <span class="text--stroke" data-text="Follow Us">Follow Us</span>
         <div class="followus-socials__icons">
             {% if section.settings.social_insta != blank %}
                 <a href="{{ section.settings.social_insta }}">

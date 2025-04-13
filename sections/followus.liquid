@@ -14,7 +14,7 @@
 <div class="followus page-width">
     <div class="followus-content">
         {% if section.settings.title != blank %}
-            <div class="followus-title">
+            <div class="followus-title text--stroke" data-text="{{ section.settings.title }}">
                 {{ section.settings.title }}
             </div>
         {% endif %}
@@ -24,7 +24,7 @@
             </a>
         {% endif %}
         <div class="followus-socials">
-            <span>Follow Us</span>
+            <span class="text--stroke" data-text="Follow Us">Follow Us</span>
             <div class="followus-socials__icons">
                 {% if section.settings.social_insta != blank %}
                     <a href="{{ section.settings.social_insta }}">

@@ -21,12 +21,12 @@
 <div class="newsletter-updated page-width">
     <div class="newsletter-updated__form updated__form">
         {% if section.settings.newsletter_title != blank %}
-            <div class="newsletter-form__title">
+            <div class="newsletter-form__title text--stroke" data-text="{{ section.settings.newsletter_title }}">
                 {{ section.settings.newsletter_title }}
             </div>
         {% endif %}
         {% if section.settings.newsletter_subtitle != blank %}
-            <div class="newsletter-form__subtitle">
+            <div class="newsletter-form__subtitle text--stroke" data-text="{{ section.settings.newsletter_subtitle }}">
                 {{ section.settings.newsletter_subtitle }}
             </div>
         {% endif %}
@@ -110,7 +110,7 @@
     </div>
     <div class="contact-updated__form updated__form">
         {% if section.settings.contact_title != blank %}
-            <div class="contact-form__title">
+            <div class="contact-form__title text--stroke" data-text="{{ section.settings.contact_title | strip_html }}">
                 {{ section.settings.contact_title }}
             </div>
         {% endif %}
@@ -198,8 +198,8 @@
                     Your Message
                 </label>
             </div>
-            <div class="contact__button">
-                <button type="submit" class="button">
+            <div class="contact__button" data-text="Submit">
+                <button type="submit" class="button button--stroke" data-text="Submit">
                     Submit
                 </button>
             </div>

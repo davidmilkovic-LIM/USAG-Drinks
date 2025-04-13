@@ -165,7 +165,7 @@
       "settings": {
         "background": "shopify://shop_images/Frame_61_1.png",
         "background_desktop": "shopify://shop_images/Frame_60.png",
-        "title": "<p>What People are saying<br/>for our drinks :)</p>",
+        "title": "What People are saying for our drinks :)",
         "button_text": "Shop Now",
         "button_link": "shopify://collections/all"
       }
@@ -178,7 +178,7 @@
         "newsletter_title": "Stay up to date",
         "newsletter_subtitle": "Get early access to U Suck at golf events, new flavors & more!",
         "newsletter_icon": "shopify://shop_images/Group_60.png",
-        "contact_title": "<p>Want to <br/>stock USAG?</p>"
+        "contact_title": "<p>Want to stock USAG?</p>"
       }
     },
     "174397645320d0dca2": {
