@@ -5153,7 +5153,7 @@ cart-remove-button .button {
 
 @media all and (max-width: 768px) {
     .template--product .product .product-item__fruit-icon {
-        width: 100px;
+        display: none;
     }
 }
 
@@ -5613,5 +5613,12 @@ cart-remove-button .button {
 
     .desktop__image {
         display: none;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .product__title-wrapper {
+        display: flex;
+        justify-content: space-between;
     }
 }
