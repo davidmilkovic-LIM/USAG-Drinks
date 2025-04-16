@@ -3851,8 +3851,9 @@ details-disclosure > details {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: auto;
     flex-wrap: wrap;
+    padding: 5rem;
 }
 
 .product-item {
@@ -4059,8 +4060,8 @@ details-disclosure > details {
 
 /* Follow Us */
 .followus {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -4101,6 +4102,7 @@ details-disclosure > details {
 
 .followus-content {
     position: relative;
+    width: 70%;
 }
 
 .followus-labels {
@@ -4172,7 +4174,6 @@ details-disclosure > details {
     position: absolute;
     bottom: 0;
     left: 100%;
-
     display: flex;
     overflow-x: auto;
     gap: 16px;
@@ -4209,6 +4210,7 @@ details-disclosure > details {
 
     .follow-slider {
         left: 58%;
+        bottom: 0;
     }
 }
 
@@ -4218,6 +4220,7 @@ details-disclosure > details {
         padding-bottom: 50px;
         gap: 45px;
         height: 100%;
+        max-height: 700px;
     }
 
     .followus-button {
@@ -4258,9 +4261,9 @@ details-disclosure > details {
 
 @media all and (min-width: 1600px) {
     .follow-slider__item {
-        width: 377px;
-        height: 392px;
-        border: 8px solid var(--color-orange);
+        width: 325px;
+        height: 325px;
+        border: 6px solid var(--color-orange);
         border-radius: 35px;
     }
 
@@ -4294,12 +4297,18 @@ details-disclosure > details {
     }
 }
 
+@media all and (max-width: 768px) {
+    .followus-content {
+        width: 100%;
+    }
+}
+
 /* Follow Us END */
 
 /* Testimonials */
 .testimonials {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .testimonials-top {
@@ -4486,8 +4495,8 @@ details-disclosure > details {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .newsletter-updated__form {
@@ -4781,7 +4790,7 @@ details-disclosure > details {
     display: flex;
     flex-wrap: wrap;
     gap: 15px 30px;
-    padding-top: 20px;
+    padding-top: 5rem;
 }
 
 .footer-updated__links a {
@@ -5572,4 +5581,22 @@ cart-remove-button .button {
 
 .template--cart .title.text--stroke:after {
     color: var(--color-peachy);
+}
+
+#PBarNextFrameWrapper {
+    display: none!important;
+}
+
+.tablet__image {
+    display: none;
+}
+
+@media all and (min-width: 768px) and (max-width: 1300px) {
+    .tablet__image {
+        display: block;
+    }
+
+    .desktop__image {
+        display: none;
+    }
 }

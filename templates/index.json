@@ -38,6 +38,7 @@
       "settings": {
         "image": "shopify://shop_images/Slide_10.png",
         "image_mobile": "shopify://shop_images/Frame_67.png",
+        "image_tablet": "shopify://shop_images/Group_67_3.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
