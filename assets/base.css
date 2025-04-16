@@ -3660,6 +3660,7 @@ details-disclosure > details {
         flex: 0 0 100vw;
         height: calc(100vh - 151px) !important;
         display: flex;
+        justify-content: center;
         align-items: center;
     }
 }
@@ -3851,7 +3852,7 @@ details-disclosure > details {
 
 @media all and (min-width: 1700px) {
     .banner.banner--desktop-transparent .banner__heading.h0 {
-        font-size: 90px;
+        font-size: 75px;
     }
 }
 
