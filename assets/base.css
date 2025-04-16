@@ -4978,7 +4978,7 @@ cart-remove-button .button {
 .template--product .product .product-item__fruit-icon {
     display: block;
     position: absolute;
-    top: 30px;
+    top: 0;
     right: 0;
     width: 170px;
     transform: rotate(40deg);
@@ -5141,12 +5141,6 @@ cart-remove-button .button {
     }
 }
 
-@media all and (min-width: 768px) and (max-width: 1500px) {
-    .template--product .product .product-item__fruit-icon {
-        width: 120px;
-    }
-}
-
 @media all and (min-width: 1500px) {
     .product--medium:not(.product--no-media) .product__media-wrapper,
     .product--small:not(.product--no-media) .product__info-wrapper,
@@ -5158,7 +5152,7 @@ cart-remove-button .button {
 
 @media all and (max-width: 768px) {
     .template--product .product .product-item__fruit-icon {
-        display: none;
+        width: 100px;
     }
 }
 
