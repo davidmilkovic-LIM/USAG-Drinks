@@ -15,7 +15,7 @@
         "heading_MVHWgJ": {
           "type": "heading",
           "settings": {
-            "heading": "Discover Our Products Made by Cold Ones Available Now",
+            "heading": "Introducing U Suck at Golf Drinks",
             "heading_size": "h0"
           }
         },
@@ -121,7 +121,7 @@
       "settings": {
         "background": "shopify://shop_images/Frame_62.png",
         "background_desktop": "shopify://shop_images/Frame_61.png",
-        "title": "Delicious fruity flavors combine with Japanese shochu, vodka & soda to create a refreshingly crispy & delightfully Groggy beverage.",
+        "title": "Delicious fruit flavors blended with premium vodka for a crisp, crushable cocktail-in-a-can. Bold taste, low sugar, and always 6% strong.",
         "button_text": "Shop Now",
         "button_link": "shopify://collections/all",
         "label_1": "shopify://shop_images/image_16.png",
@@ -179,7 +179,12 @@
         "newsletter_title": "Stay up to date",
         "newsletter_subtitle": "Get early access to U Suck at golf events, new flavors & more!",
         "newsletter_icon": "shopify://shop_images/Group_60.png",
-        "contact_title": "<p>Want to stock USAG?</p>"
+        "contact_title": "<p>Want to stock USAG?</p>",
+        "contact_details": "",
+        "contact_office": "",
+        "contact_phone": "",
+        "contact_email": "",
+        "contact_hours": ""
       }
     },
     "174397645320d0dca2": {
